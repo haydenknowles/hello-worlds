@@ -1,8 +1,10 @@
 var http = require('http')
 
-server = http.createServer(function(request, response) {
+var server = http.createServer(function(request, response) {
   response.write('Hello World')
-  response.close()
+  console.log('got a request!')
+  response.end()
 })
 
 server.listen(3000)
+console.log('Server is listening on port 3000...')
