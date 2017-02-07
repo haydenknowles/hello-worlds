@@ -1,0 +1,24 @@
+{
+  "name": "hello-worlds",
+  "version": "0.0.1",
+  "description": "Hello World in various programming languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haydenknowles/hello-worlds.git"
+  },
+  "keywords": [
+    "hello-world",
+    "programming",
+    "languages"
+  ],
+  "author": "Ricky, Hayden",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/haydenknowles/hello-worlds/issues"
+  },
+  "homepage": "https://github.com/haydenknowles/hello-worlds#readme"
+}
