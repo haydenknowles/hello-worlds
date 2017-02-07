@@ -5,4 +5,4 @@ server = http.createServer(function(request, response) {
 		response.end()
 })
 
-server.listen()
+server.listen(3000)
