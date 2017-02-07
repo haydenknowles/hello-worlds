@@ -6,5 +6,6 @@ var server = http.createServer(function(request, response) {
   response.end()
 })
 
-server.listen(3000)
+var port = process.env.PORT || 3000
+server.listen(port)
 console.log('Server is listening on port 3000...')
