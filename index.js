@@ -10,29 +10,6 @@ const connString = 'postgres://gvodabrblszwoy:b15ed1f7d7bc2630f57c3fc0d6eba49736
 const localString = 'postgres://localhost:5432/haydenknowles'
 
 var res;
-
-
-// pg.connect(connString, (err, client, done) => {
-//   if (err) return console.error('error fetching client from pool', err);
-//   client.query('SELECT * from "public"."nodetest" where id = $1', ['2'], function (err, result){
-//       done()
-//       if (err) console.error('error happened during query', err);
-//       //console.log(typeof result.rows[0].id);
-//       res = result.rows[0]
-//
-//       //process.exit(0);
-//   })
-// })
-
-// var server = http.createServer(function(request, response) {
-//   response.write(JSON.stringify(res))
-//   console.log('got a request!')
-//   response.end()
-// })
-
-// var port = process.env.PORT || 3000
-// server.listen(port)
-// console.log('Server is listening on port 3000...')
 const app = express()
 
 app.engine('.hbs', exphbs({
@@ -51,13 +28,14 @@ app.get('/', (request, response) => {
         if (err) console.error('error happened during query', err);
         //console.log(typeof result.rows[0].id);
         res = result.rows[0]
-
         //process.exit(0);
+
+        response.render('home', {
+          name: res.name
+        })
     })
   })
-  response.render('home', {
-    name: res.name
-  })
+
 })
 var port = process.env.PORT || 3000
 app.listen(port)
