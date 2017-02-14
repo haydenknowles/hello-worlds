@@ -11,17 +11,18 @@ const localString = 'postgres://localhost:5432/haydenknowles'
 
 var res;
 
-pg.connect(connString, (err, client, done) => {
-  if (err) return console.error('error fetching client from pool', err);
-  client.query('SELECT * from "public"."nodetest" where id = $1', ['2'], function (err, result){
-      done()
-      if (err) console.error('error happened during query', err);
-      //console.log(typeof result.rows[0].id);
-      res = result.rows[0]
 
-      //process.exit(0);
-  })
-})
+// pg.connect(connString, (err, client, done) => {
+//   if (err) return console.error('error fetching client from pool', err);
+//   client.query('SELECT * from "public"."nodetest" where id = $1', ['2'], function (err, result){
+//       done()
+//       if (err) console.error('error happened during query', err);
+//       //console.log(typeof result.rows[0].id);
+//       res = result.rows[0]
+//
+//       //process.exit(0);
+//   })
+// })
 
 // var server = http.createServer(function(request, response) {
 //   response.write(JSON.stringify(res))
@@ -43,8 +44,19 @@ app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/', (request, response) => {
+  pg.connect(connString, (err, client, done) => {
+    if (err) return console.error('error fetching client from pool', err);
+    client.query('SELECT * from "public"."nodetest" where id = $1', ['2'], function (err, result){
+        done()
+        if (err) console.error('error happened during query', err);
+        //console.log(typeof result.rows[0].id);
+        res = result.rows[0]
+
+        //process.exit(0);
+    })
+  })
   response.render('home', {
-    name: res.Name
+    name: res.name
   })
 })
 var port = process.env.PORT || 3000
