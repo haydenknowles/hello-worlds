@@ -47,4 +47,6 @@ app.get('/', (request, response) => {
     name: res.Name
   })
 })
-app.listen(3000)
+var port = process.env.PORT || 3000
+app.listen(port)
+console.log('Server is listening for requests...')
