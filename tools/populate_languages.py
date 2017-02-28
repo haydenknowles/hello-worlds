@@ -18,7 +18,6 @@ for root, dirs, files in os.walk('.'):
             cur.execute('insert into "public"."Languages"("language", "code", "image") values(%s, %s, %s);', (language, code, 'true'))
             cur.execute('commit;')
         except Exception, e:
-            #import pdb; pdb.set_trace()
             if 'invalid byte sequence for encoding "UTF8":' in str(e):
                 cur.execute('insert into "public"."Languages"("language", "code", "image") values(%s, %s, %s);', (language, psycopg2.Binary(code), 'false'))
                 cur.execute('commit;')
