@@ -10,7 +10,7 @@ const connection = new pg.Client({
   host: "ec2-54-225-122-119.compute-1.amazonaws.com",
   ssl: true
 })
-
+// test
 //const localString = 'postgres://localhost:5432/haydenknowles'
 
 function pgConnection(callback){
