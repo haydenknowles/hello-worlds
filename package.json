@@ -2,9 +2,9 @@
   "name": "hello-worlds",
   "version": "0.0.1",
   "description": "Hello World in various programming languages",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,7 +25,6 @@
   "dependencies": {
     "ejs": "^2.5.5",
     "express": "^4.14.1",
-    "express-handlebars": "^3.0.0",
     "pg": "^6.1.2"
   }
 }
