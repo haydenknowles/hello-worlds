@@ -1,21 +1,30 @@
 // module imports
-const http = require('http');
-const pg = require('pg');
-const express = require('express');
-const path = require('path');
-const client = require('./config/database.js');
-
-
-var res;
+const express = require('express')
+const database = require('./config/database.js')
+const ect = require('ect')
 const app = express()
+var res
+
+const ectRenderer = ect({
+	ext: '.ect',
+	watch: true,
+	open: '{{',
+	close: '}}'
+});
+
+app.set('view engine', 'ect')
+app.engine('ect', ectRenderer.render)
+
 app.get('/', (request, response) => {
-  client.client.query('SELECT * from "public"."Languages" where id = $1', ['100'], function (err, result){
-      if (err) console.error('error happened during query', err);
+  database.client.query('SELECT * from "public"."Languages" where id = $1', ['100'], (err, result) => {
+      if (err) console.error('error happened during query', err)
       res = result.rows[0]
-      response.send(res.language + "<br />" + res.code)
+      response.render('index', {
+      	result: res.code
+      })
   })
 })
 var port = process.env.PORT || 3000
 
 app.listen(port)
-console.log('Server is listening for requests...')
+console.log('Server is listening for requests... '+ port)
