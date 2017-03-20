@@ -1,0 +1,10 @@
+.input-group, .input-group-lg{
+	width: 50%;
+	margin: auto;
+	margin-bottom: 1%;
+}
+
+#code{
+	width: 60%;
+	margin: auto;
+}
