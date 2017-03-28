@@ -1,6 +1,5 @@
 const pg = require('pg')
 
-// conn strings
 //const localString = 'postgres://localhost:5432/haydenknowles'
 const connString = 'postgres://@ec2-54-225-122-119.compute-1.amazonaws.com:5432/d8dpmerp72t1cu '
 const connection = new pg.Client({
@@ -12,7 +11,7 @@ const connection = new pg.Client({
   ssl: true
 })
 
-connection.connect((err, client, done) => {
+connection.connect(function(err, client, done) {
   module.exports.client = client
   module.exports.done = done
 })
