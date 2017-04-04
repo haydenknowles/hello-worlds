@@ -18,10 +18,9 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (request, response) => {
   database.client.query('SELECT * FROM languages;', [], (err, result) => {
-      if (err) console.error('error happened during query', er)
-      res = result.rows[0]
+      if (err) console.error('error happened during query')
       response.render('index', {
-      	result: res.code
+      	result: result.rows
       })
   })
 })
