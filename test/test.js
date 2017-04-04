@@ -5,5 +5,3 @@ var database = require('../config/database.js')
 		console.log(database, "DSDFSDFSDF")
 	});
 });
-
-
