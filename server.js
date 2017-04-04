@@ -17,8 +17,8 @@ app.engine('ect', ectRenderer.render)
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (request, response) => {
-  database.client.query('SELECT * from "public"."Languages" where id = $1', ['96'], (err, result) => {
-      if (err) console.error('error happened during query', err)
+  database.client.query('SELECT * FROM languages;', [], (err, result) => {
+      if (err) console.error('error happened during query', er)
       res = result.rows[0]
       response.render('index', {
       	result: res.code
