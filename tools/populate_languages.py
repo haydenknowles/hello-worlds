@@ -25,7 +25,7 @@ for root, dirs, files in os.walk('.'):
         with open(abs_filename, 'rb') as f:
             code = f.read()
         try:
-            cur.execute('insert into languages("language", "code") values(%s, %s);', (language, code))
+            cur.execute('INSERT INTO languages("language", "code") VALUES(%s, %s);', (language, code))
             cur.execute('commit;')
         except Exception as e:
             pass

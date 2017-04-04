@@ -17,7 +17,7 @@ app.engine('ect', ectRenderer.render)
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (request, response) => {
-  database.client.query('SELECT * FROM languages;', [], (err, result) => {
+  database.client.query('SELECT * FROM languages ORDER BY language;', [], (err, result) => {
       if (err) console.error('error happened during query')
       response.render('index', {
       	result: result.rows
