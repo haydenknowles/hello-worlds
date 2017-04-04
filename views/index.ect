@@ -29,18 +29,23 @@
 	</nav>
 
 <div class="input-group input-group-lg">
-  <input type="text" class="form-control " placeholder="Search" aria-describedby="sizing-addon1">
+  <input type="text" class="form-control " placeholder="Search" aria-describedby="sizing-addon1" id="search_bar">
 </div>
 
+{{ for row in @result : }}
 <pre id="code">
-	<code class="language-brainfuck">
-		{{= @result }}
+{{= row.language }}
+	<code class="language-{{= row.language }}">
+		{{= row.code }}
 	</code>
 </pre>
+<br />
+{{ end }}
 
 <!-- <h1>{{= @result }}</h1> -->
 </body>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="js/prism.js"></script>
+<script src="js/script.js"></script>
 </html>
