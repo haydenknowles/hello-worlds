@@ -3,6 +3,11 @@
 	margin: auto;
 	margin-bottom: 1%;
 }
+.language_code{
+	display: none;
+}
+
+
 
 /*#code{
 	width: 60%;
