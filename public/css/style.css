@@ -3,13 +3,12 @@
 	margin: auto;
 	margin-bottom: 1%;
 }
-.language_code{
-	display: none;
+
+.jumbotron{
+	background-color: white;
 }
-
-
-
-/*#code{
-	width: 60%;
-	margin: auto;
-}*/
+pre {
+	display: inline-table;
+	padding: 0px;
+	width: 100%;
+}

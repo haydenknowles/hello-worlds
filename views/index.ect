@@ -4,7 +4,7 @@
 	<title>Hello Worlds</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<link rel="stylesheet" type="text/css" href="css/solarized-dark.css">
 </head>
 
 <body>
@@ -18,27 +18,27 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Brand</a>
+			<a class="navbar-brand" href="#">Stuff</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">About Us</a></li>
-				<li><a href="#">Implementation</a></li>
+				<li class="active"><a href="#">Hello Worlds</a></li>
+				<li><a href="#">About</a></li>
 			</ul>
 		</div>
 	</nav>
 
 <div class="input-group input-group-lg">
-  <input type="text" class="form-control " placeholder="Search" aria-describedby="sizing-addon1" id="search_bar">
+  <input autofocus="true" type="text" class="form-control " placeholder="Search" aria-describedby="sizing-addon1" id="search_bar">
 </div>
 <div class="container">
 <div class="jumbotron">
 	{{ for row in @result : }}
-	<div class="language_code" id="{{= row.language }}">
+	<div class="language_code">
 		<h3>{{= row.language }}</h3>
 		<pre>
-			<code class="language-{{= row.language }}">
-				{{= row.code }}
+			<code class="{{= row.language }}">
+{{= row.code }}
 			</code>
 		</pre>
 		<br />
@@ -50,6 +50,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="js/prism.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="js/script.js"></script>
 </html>
