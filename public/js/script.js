@@ -8,10 +8,14 @@ function search(){
 	for(var i = 0; i<languages.length;i++){
 		var language = languages[i].getElementsByTagName("h3")[0];
 		if(language.innerText.toLowerCase().indexOf(searchValue) > -1){
-			languages[i].style.display = "block"
+			setTimeout(function(){
+				languages[i].style.display = "block"
+			}, 0);
 		}
 		else{
-			languages[i].style.display = "none"
+			setTimeout(function(){
+				languages[i].style.display = "none"
+			}, 0);
 		}
 	}
 }
