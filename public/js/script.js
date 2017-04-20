@@ -5,7 +5,7 @@ function search(){
 	var searchValue = bar_search.value.toLowerCase();
 	var languages = document.getElementsByClassName("language_code");
 
-	for(var i = 0; i<languages.length;i++){
+	for(let i = 0; i<languages.length;i++){
 		var language = languages[i].getElementsByTagName("h3")[0];
 		if(language.innerText.toLowerCase().indexOf(searchValue) > -1){
 			setTimeout(function(){
